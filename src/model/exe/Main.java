@@ -16,7 +16,7 @@ public class Main {
         Buscador busc = new Buscador();
         
         long inicio = System.currentTimeMillis();
-        busc.pesquisaNome("CRISTO", "lista");
+        busc.pesquisaNome("NOME", "DIRETÓRIO");
         long fim = System.currentTimeMillis();
         long tempo = fim - inicio;
         System.out.println("Tempo decorrido: "+tempo+" milissegundos");
