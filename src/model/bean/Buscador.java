@@ -1,4 +1,3 @@
-
 package model.bean;
 
 import java.io.File;
@@ -11,7 +10,8 @@ import model.util.Arquivo;
  * @author Pedro Citadin Coelho
  */
 public class Buscador {
-        public List<File> listaArquivos;
+
+    public List<File> listaArquivos;
 
     public List<File> getListaArquivos() {
         return listaArquivos;
@@ -27,30 +27,24 @@ public class Buscador {
     public Buscador(List<File> listaArquivos) {
         this.listaArquivos = listaArquivos;
     }
-    
-    public void pesquisaNome(String nome, String diretorio) throws IOException{
+
+    public void pesquisaNome(String nome, String diretorio) throws IOException {
         listaArquivos = Arquivo.pegaTodosOsArquivos(diretorio);
         for (File f : listaArquivos) {
             Arquivo a = new Arquivo(f);
             List<String> listaLinhas = a.pegalistaLinhas(a);
             int contador = 0;
             for (String linha : listaLinhas) {
-                String[] palavras = linha.split(" ");
+
                 contador++;
-                for (int i = 0; i < palavras.length; i++) {
-                    if (palavras[i].equalsIgnoreCase(nome)) {
-                    System.out.println("Encontrado no arquivo: "+a.getNome()+" na linha: "+contador);
-                    }
+
+                if (linha.equalsIgnoreCase(nome)) {
+                    System.out.println("Encontrado no arquivo: " + a.getNome() + " na linha: " + contador);
                 }
+
             }
         }
-        
-        
+
     }
-        
-        
-        
-        
-        
-        
+
 }
