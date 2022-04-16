@@ -28,7 +28,7 @@ public class Buscador {
         this.listaArquivos = listaArquivos;
     }
 
-    public void pesquisaNome(String nome, String diretorio) throws IOException {
+    public void pesquisaNome(String nome, File diretorio) throws IOException {
         listaArquivos = Arquivo.pegaTodosOsArquivos(diretorio);
         for (File f : listaArquivos) {
             Arquivo a = new Arquivo(f);

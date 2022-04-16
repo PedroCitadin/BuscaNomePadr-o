@@ -165,6 +165,16 @@ public class Arquivo {
         }
         return f3;
     }
+    public static List<File> pegaTodosOsArquivos(File a){
+        File f = a;
+        List<File> f3 = new ArrayList();
+        for (File f2: f.listFiles()) {
+            if(f2.isFile()){
+                f3.add(f2);
+            }
+        }
+        return f3;
+    }
     public Arquivo (File f){
         this.endereco = f.getParent();
         this.nome = f.getName();
